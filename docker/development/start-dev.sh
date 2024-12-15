@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPOSE_CMD="docker-compose -f docker-compose.dev.yml"
+COMPOSE_CMD="docker compose -f docker-compose.dev.yml"
 CERTS_FLAG="$1"
 
 RED='\033[0;31m'
@@ -50,7 +50,7 @@ esac
 $COMPOSE_CMD up -d
 
 if [ $? -ne 0 ]; then
-    echo -e "${RED}Failed to start services with docker-compose.${NC}"
+    echo -e "${RED}Failed to start services with docker compose.${NC}"
     exit 1
 fi
 
